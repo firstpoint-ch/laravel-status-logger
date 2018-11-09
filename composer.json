@@ -1,0 +1,26 @@
+{
+    "name": "firstpoint/status-history",
+    "description": "Status history for models",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Frédéric Marmillod",
+            "email": "fmarmillod@firstpoint.ch"
+        }
+    ],
+    "require": {
+        "php": ">=7.1.3"
+    },
+    "autoload": {
+        "psr-0": {
+            "StatusHistory\\": "src"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "StatusHistory\\StatusHistoryServiceProvider"
+            ]
+        }
+    }
+}
