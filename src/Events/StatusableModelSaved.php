@@ -1,6 +1,6 @@
 <?php
 
-namespace StatusHistory\Events;
+namespace StatusLogger\Events;
 
 use Illuminate\Broadcasting\Channel;
 use Illuminate\Queue\SerializesModels;

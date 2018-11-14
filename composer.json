@@ -1,6 +1,6 @@
 {
-    "name": "firstpoint/status-history",
-    "description": "Status history for models",
+    "name": "firstpoint/laravel-status-logger",
+    "description": "Status logs for Laravel models",
     "license": "MIT",
     "authors": [
         {
@@ -13,13 +13,13 @@
     },
     "autoload": {
         "psr-0": {
-            "StatusHistory\\": "src"
+            "StatusLogger\\": "src"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "StatusHistory\\StatusHistoryServiceProvider"
+                "StatusLogger\\StatusLoggerServiceProvider"
             ]
         }
     }

@@ -1,6 +1,6 @@
 <?php
 
-namespace StatusHistory\Models;
+namespace StatusLogger\Models;
 
 use Illuminate\Database\Eloquent\Model;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace StatusHistory\Traits;
+namespace StatusLogger\Traits;
 
 trait HasStatus
 {
@@ -13,7 +13,7 @@ trait HasStatus
     {
         parent::__construct($attributes);
 
-        $this->dispatchesEvents['saved'] = \StatusHistory\Events\StatusableModelSaved::class;
+        $this->dispatchesEvents['saved'] = \StatusLogger\Events\StatusableModelSaved::class;
     }
 
     /**
@@ -22,8 +22,9 @@ trait HasStatus
     public function statuses()
     {
         return $this
-            ->morphToMany(\StatusHistory\Models\Status::class, 'statusable')
-            ->orderBy('id', 'DESC');
+            ->morphToMany(config('status.model'), 'statusable')
+            ->orderBy('id', 'DESC')
+            ->withPivot(config('status.pivot'));
     }
 
     /**
@@ -31,6 +32,6 @@ trait HasStatus
      */
     public function status()
     {
-        return $this->belongsTo(\StatusHistory\Models\Status::class);
+        return $this->belongsTo(config('status.model'));
     }
 }

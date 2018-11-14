@@ -4,7 +4,7 @@
 
 **Currently under development. Use it at your own risk.**
 
-This package adds statuses to you models. It uses model events to push statuses to a history and let you keep the current ```status_id``` on the model itself. 
+This package adds statuses to you models. It uses model events to push statuses to a history and let you keep the current ```status_id``` on the model itself.
 
 ## Installation
 
@@ -20,15 +20,15 @@ If you're using Laravel 5.5 or higher, you can skip this part. If not, register 
 'providers' => [
 
     // ...
-    StatusHistory\StatusHistoryServiceProvider::class,
-    
+    StatusLogger\StatusLoggerServiceProvider::class,
+
 ];
 ```
 
 Publish the migration with
 
 ```
-php artisan vendor:publish --provider="StatusHistory\StatusHistoryServiceProvider" --tag="migrations"
+php artisan vendor:publish --provider="StatusLogger\StatusLoggerServiceProvider" --tag="migrations"
 
 php artisan migrate
 ```
@@ -36,14 +36,14 @@ php artisan migrate
 You can publish the config file with
 
 ```
-php artisan vendor:publish --provider="StatusHistory\StatusHistoryServiceProvider" --tag="config"
+php artisan vendor:publish --provider="StatusLogger\StatusLoggerServiceProvider" --tag="config"
 ```
 
 Then add the ```HasStatus``` trait to your models:
 
 ```
 ...
-use StatusHistory\Traits\HasStatus;
+use StatusLogger\Traits\HasStatus;
 
 class Order extends Model
 {

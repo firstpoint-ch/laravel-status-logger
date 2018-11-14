@@ -1,10 +1,10 @@
 <?php
 
-namespace StatusHistory\Listeners;
+namespace StatusLogger\Listeners;
 
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
-use StatusHistory\Events\StatusableModelSaved;
+use StatusLogger\Events\StatusableModelSaved;
 
 class PushStatusToHistory
 {

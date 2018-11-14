@@ -1,12 +1,12 @@
 <?php
 
-namespace StatusHistory;
+namespace StatusLogger;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Session\SessionManager;
 use Illuminate\Support\Facades\Event;
 
-class StatusHistoryServiceProvider extends ServiceProvider
+class StatusLoggerServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap services.
@@ -17,9 +17,11 @@ class StatusHistoryServiceProvider extends ServiceProvider
     {
         $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
 
+        $this->mergeConfigFrom(__DIR__.'/config/status.php', 'status');
+
         Event::listen(
-            \StatusHistory\Events\StatusableModelSaved::class,
-            \StatusHistory\Listeners\PushStatusToHistory::class
+            \StatusLogger\Events\StatusableModelSaved::class,
+            \StatusLogger\Listeners\PushStatusToHistory::class
         );
     }
 
