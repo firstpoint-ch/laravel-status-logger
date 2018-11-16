@@ -1,5 +1,5 @@
 {
-    "name": "firstpoint/laravel-status-logger",
+    "name": "firstpoint-ch/laravel-status-logger",
     "description": "Status logs for Laravel models",
     "license": "MIT",
     "authors": [
