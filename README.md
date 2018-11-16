@@ -11,7 +11,7 @@ This package adds statuses to you models. It uses model events to push statuses 
 This package can be installed throught Composer
 
 ```
-composer require firstpoint/laravel-status-logger
+composer require firstpoint-ch/laravel-status-logger
 ```
 
 If you're using Laravel 5.5 or higher, you can skip this part. If not, register the service provider by adding this line in your ```app/config.php```.
