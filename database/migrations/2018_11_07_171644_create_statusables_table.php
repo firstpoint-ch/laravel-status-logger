@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateStatusableTable extends Migration
+class CreateStatusablesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -28,6 +28,6 @@ class CreateStatusableTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('statusable');
+        Schema::dropIfExists('statusables');
     }
 }

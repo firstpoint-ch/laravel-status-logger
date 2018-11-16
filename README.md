@@ -1,17 +1,17 @@
-# Status History for Laravel Models
+# Status Logger for Laravel Models
 
 ## Description
 
 **Currently under development. Use it at your own risk.**
 
-This package adds statuses to you models. It uses model events to push statuses to a history and let you keep the current ```status_id``` on the model itself.
+This package adds statuses to you models. It uses model events to push statuses to a log and let you keep the current ```status_id``` on the model itself.
 
 ## Installation
 
 This package can be installed throught Composer
 
 ```
-composer require firstpoint/status-history
+composer require firstpoint/laravel-status-logger
 ```
 
 If you're using Laravel 5.5 or higher, you can skip this part. If not, register the service provider by adding this line in your ```app/config.php```.
@@ -29,11 +29,11 @@ Publish the migration with
 
 ```
 php artisan vendor:publish --provider="StatusLogger\StatusLoggerServiceProvider" --tag="migrations"
-
-php artisan migrate
 ```
 
-You can publish the config file with
+And add your customer pivot columns before ```php artisan migrate```.
+
+Then you can publish the config file with
 
 ```
 php artisan vendor:publish --provider="StatusLogger\StatusLoggerServiceProvider" --tag="config"
